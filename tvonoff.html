@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title></title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div> <button>Turn On TV</button></div>
+        <div><p>TV Belum Menyala</p></div>
+        <script>
+            var btn = document.querySelector('button');
+            var txt = document.querySelector('p');
+            
+            function updateBtn()
+            {
+             if(btn.textContent === 'Turn On TV' ){
+                 btn.textContent = 'Turn Off TV';
+                 txt.textContent = 'TV Sudah Menyala';
+             }
+             else{
+                  btn.textContent = 'Turn On TV';
+                 txt.textContent = 'TV Belum Menyala';
+             }
+            }
+            
+            btn.addEventListener('click', updateBtn);
+            
+            
+        </script>
+            
+
+    </body>
+</html>
