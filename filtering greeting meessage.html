@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Muhamad Habib">
+    </head>
+    <body>
+  <ul>
+        <ul>Happy Birthday</ul>
+        <ul>Happy Independents day my love</ul>
+        <ul>A happy Independents day  to all the family</ul>
+        <ul>You're all I want for Independents day </ul>
+        <ul>Get well soon</ul></ul>
+
+     
+            <button>Filter Independent day</button>
+     
+        
+          
+        <script>
+            var button = document.querySelector('button');
+
+         button.onclick = function(){
+        var list = document.querySelector('ul');
+        list.innerHTML = '';
+        var greetings = ['Happy Birthday!',
+         'Happy Independents day my love',
+         'A happy Independents day  to all the family',
+         'You\'re all I want for Independents day ',
+         'Get well soon'];
+
+        for(var i = 0; i < greetings.length; i++) {
+         var input = greetings[i];
+         if(greetings[i].indexOf('Independents day') !== -1) {
+         var result = input;
+         var listItem = document.createElement('li');
+         listItem.textContent = result;
+         list.appendChild(listItem);
+         }
+        }   
+            }
+      
+        </script>
+    </body>
+    
+</html>
