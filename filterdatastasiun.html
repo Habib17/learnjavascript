@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Muhamad Habib">
+    </head>
+    <body>
+  <ul>
+   <li>  MAN675847583748sjt567654;Manchester Piccadilly</li><br><li>GNF576746573fhdg4737dh4;Greenfield</li><br><li>LIV5hg65hd737456236dch46dg4;Liverpool Lime Street</li><br><li>SYB4f65hf75f736463;Stalybridge</li><br><li>HUD5767ghtyfyr4536dh45dg45dg3;Huddersfield</li>
+  </ul>
+
+     
+            <button>Filter Independent day</button>
+     
+        
+          
+        <script>
+            var button = document.querySelector('button');
+
+         button.onclick = function(){
+var list = document.querySelector('ul');
+list.innerHTML = '';
+var stations = ['MAN675847583748sjt567654;Manchester Piccadilly',
+ 'GNF576746573fhdg4737dh4;Greenfield',
+ 'LIV5hg65hd737456236dch46dg4;Liverpool Lime Street',
+ 'SYB4f65hf75f736463;Stalybridge',
+ 'HUD5767ghtyfyr4536dh45dg45dg3;Huddersfield'];
+
+for(var i = 0; i < stations.length; i++) {
+ var input = stations[i];
+ var code = input.slice(0,3);
+ var semiC = input.indexOf(';');
+ var name = input.slice(semiC + 1);
+ var result = code + ': ' + name;
+ var listItem = document.createElement('li');
+ listItem.textContent = result;
+ list.appendChild(listItem);
+}
+            }
+      
+        </script>
+    </body>
+    
+</html>
