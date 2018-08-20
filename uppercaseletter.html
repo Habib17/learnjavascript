@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Muhamad Habib">
+    </head>
+    <body>
+  <ul>
+   <li> lonDon</li><br><li>ManCHESTer</li><br><li>BiRmiNGHAM</li><br><li>liVERpoOL</li>
+  </ul>
+
+     
+            <button>Filter Independent day</button>
+     
+        
+          
+        <script>
+            var button = document.querySelector('button');
+
+         button.onclick = function(){
+var list = document.querySelector('ul');
+list.innerHTML = '';
+var cities = ['lonDon', 'ManCHESTer', 'BiRmiNGHAM', 'liVERpoOL'];
+
+for(var i = 0; i < cities.length; i++) {
+ var input = cities[i];
+ var lower = input.toLowerCase();
+ var firstLetter = lower.slice(0,1);
+ var capitalized = lower.replace(firstLetter,firstLetter.toUpperCase());
+ var result = capitalized;
+ var listItem = document.createElement('li');
+ listItem.textContent = result;
+ list.appendChild(listItem);
+
+} 
+            }
+      
+        </script>
+    </body>
+    
+</html>
