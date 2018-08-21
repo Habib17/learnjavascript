@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Muhamad Habib">
+    </head>
+    <body>
+  <ul>
+   <p></p>
+  </ul>
+
+     
+            <button>Ganti</button>
+     
+        
+          
+        <script>
+            var button = document.querySelector('button');
+
+         button.onclick = function(){
+
+          var list = document.querySelector('ul');
+          var totalBox = document.querySelector('p');
+          var total = 0;
+          list.innerHTML = '';
+          totalBox.textContent = '';
+
+          var products = ['Underpants:6.99',
+           'Socks:5.99',
+           'T-shirt:14.99',
+           'Trousers:31.99',
+           'Shoes:23.99'];
+
+          for(var i = 0; i < products.length; i++) {
+           var subArray = products[i].split(':');
+           var name = subArray[0];
+           var price = Number(subArray[1]);
+           total += price;
+           itemText = name + ' : $' + price;
+
+           var listItem = document.createElement('li');
+           listItem.textContent = itemText;
+           list.appendChild(listItem);
+        }
+
+          totalBox.textContent = 'Total: $' + total.toFixed(2);
+          }
+      
+        </script>
+    </body>
+    
+</html>
