@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Muhamad Habib">
+    </head>
+    <body>
+
+   <p><input type="text" name="textcari" placeholder="isi text"> <button>Search</button></p>
+   <ul>
+  </ul>
+
+     
+      
+     
+        
+          
+        <script>
+          var list = document.querySelector('ul');
+          var searchInput = document.querySelector('input');
+          var searchBtn = document.querySelector('button');
+
+          list.innerHTML = '';
+
+          var myHistory= [];
+
+          searchBtn.onclick = function() {
+           if(searchInput.value !== '') {
+           myHistory.unshift(searchInput.value);
+
+           list.innerHTML = '';
+
+           for(var i = 0; i < myHistory.length; i++) {
+           itemText = myHistory[i];
+           var listItem = document.createElement('li');
+           listItem.textContent = itemText;
+           list.appendChild(listItem);
+           }
+
+           if(myHistory.length >= 5) {
+           myHistory.pop();
+           }
+
+           searchInput.value = '';
+           searchInput.focus();
+           }
+          }
+      
+        </script>
+    </body>
+    
+</html>
