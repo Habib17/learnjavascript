@@ -1,0 +1,47 @@
+{
+  "name": "image-gallery",
+  "version": "0.3.1",
+  "description": "A simple image gallery",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint lib/*.js",
+    "js": "browserify index.js --igv global -p bundle-collapser/plugin -s ImageGallery | derequire > dist/image-gallery.js",
+    "minify:js": "uglifyjs dist/image-gallery.js -cm > dist/image-gallery.min.js",
+    "less": "lessc style.less dist/image-gallery.css",
+    "watch:js": "watchify index.js -v -d --igv global -o dist/image-gallery.js -s ImageGallery",
+    "all": "npm run lint && npm run js && npm run minify:js && npm run less"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikku/image-gallery.git"
+  },
+  "keywords": [
+    "image",
+    "gallery",
+    "layout",
+    "lightbox",
+    "embeddable"
+  ],
+  "author": "Nico Rehwaldt <git_nikku@nixis.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nikku/image-gallery/issues"
+  },
+  "homepage": "https://github.com/nikku/image-gallery#readme",
+  "dependencies": {
+    "domify": "^1.4.0",
+    "events": "^1.1.0",
+    "image-layout": "^0.4.0",
+    "inherits": "^2.0.1",
+    "xtend": "^4.0.1"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "bundle-collapser": "^1.2.1",
+    "derequire": "^2.0.3",
+    "eslint": "^2.4.0",
+    "less": "^2.6.1",
+    "uglifyjs": "^2.4.10",
+    "watchify": "^3.7.0"
+  }
+}
